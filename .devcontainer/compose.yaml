@@ -1,4 +1,4 @@
-name: "farmy_api"
+name: 'farmy_api'
 
 services:
   rails-app:
@@ -7,10 +7,12 @@ services:
       dockerfile: .devcontainer/Dockerfile
 
     volumes:
-    - ../..:/workspaces:cached
+      - ../..:/workspaces:cached
 
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
+
+    stdin_open: true
 
     # Uncomment the next line to use a non-root user for all processes.
     # user: vscode
@@ -18,8 +20,9 @@ services:
     # Use "forwardPorts" in **devcontainer.json** to forward an app port locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
     depends_on:
-    - selenium
-    - mysql
+      - selenium
+      - mysql
+      - redis
 
   selenium:
     image: selenium/standalone-chromium
@@ -28,13 +31,33 @@ services:
   mysql:
     image: mysql/mysql-server:8.0
     restart: unless-stopped
+    env_file:
+      - ../.env
     environment:
-        MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
-        MYSQL_ROOT_HOST: "%"
+      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - '${DATABASE_PORT}:3306'
     volumes:
-    - mysql-data:/var/lib/mysql
+      - mysql-data:/var/lib/mysql
     networks:
-    - default
+      - default
+
+  redis:
+    image: redis:8.0
+    ports:
+      - 6379:6379
+    volumes:
+      - redis-data:/data
+
+  sidekiq:
+    build: .
+    volumes:
+      - ../..:/workspaces:cached
+    depends_on:
+      - mysql
+      - redis
 
 volumes:
   mysql-data:
+  redis-data:

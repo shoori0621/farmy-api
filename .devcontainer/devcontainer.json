@@ -25,11 +25,53 @@
   "forwardPorts": [3000, 3306],
 
   // Configure tool-specific properties.
-  // "customizations": {},
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "mhutchie.git-graph",
+        "Shopify.ruby-lsp",
+        "rubocop.vscode-rubocop"
+      ],
+      "settings": {
+        "ruby.lsp.enabledFeatures": {
+          "codeActions": true,
+          "diagnostics": true,
+          "documentHighlights": true,
+          "documentLink": true,
+          "documentSymbols": true,
+          "foldingRanges": true,
+          "formatting": true,
+          "hover": true,
+          "inlayHint": true,
+          "onTypeFormatting": true,
+          "selectionRanges": true,
+          "semanticHighlighting": true,
+          "completion": true,
+          "codeLens": true,
+          "definition": true,
+          "workspaceSymbol": true,
+          "signatureHelp": true,
+          "typeHierarchy": true
+        },
+        "ruby.lsp.rubyVersionManager": "rbenv",
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "files.associations": {
+          "*.rb": "ruby",
+          "*.rake": "ruby",
+          "Gemfile": "ruby",
+          "Rakefile": "ruby",
+          "config.ru": "ruby"
+        },
+        "emmet.includeLanguages": {
+          "erb": "html"
+        }
+      }
+    }
+  },
 
   // Uncomment to connect as root instead. More info: https://containers.dev/implementors/json_reference/#remoteUser.
   // "remoteUser": "root",
-
 
   // Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": "bin/setup --skip-server"
