@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  farm_field: one
+  work_name: MyString
+  memo: MyText
+  worked_at: 2025-06-26 14:04:40
+
+two:
+  user: two
+  farm_field: two
+  work_name: MyString
+  memo: MyText
+  worked_at: 2025-06-26 14:04:40

@@ -1,0 +1,2 @@
+class FarmFieldCategory < ApplicationRecord
+end

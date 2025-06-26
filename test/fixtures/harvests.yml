@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  crop_variety: one
+  harvested_weight: 9.99
+  harvested_at: 2025-06-26 14:05:06
+
+two:
+  user: two
+  crop_variety: two
+  harvested_weight: 9.99
+  harvested_at: 2025-06-26 14:05:06
