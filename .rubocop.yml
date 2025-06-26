@@ -8,5 +8,6 @@ AllCops:
     - 'tmp/**/*'
     - 'node_modules/**/*'
 
-Style/StringLiterals:
-  EnforcedStyle: single_quotes
+Rails:
+  Style/StringLiterals:
+    EnforcedStyle: single_quotes

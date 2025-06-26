@@ -37,7 +37,7 @@ services:
       MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
       MYSQL_ROOT_HOST: '%'
     ports:
-      - '${DATABASE_PORT}:3306'
+      - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
     networks:
