@@ -41,15 +41,15 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 
 # dotenv
-gem 'dotenv-rails'
+gem "dotenv-rails"
 
 # Use Redis adapter to run Action Cable in production
-gem 'redis', '>= 4.0.1'
+gem "redis", ">= 4.0.1"
 # redisの高速化
-gem 'hiredis'
+gem "hiredis"
 
 # sidekiq
-gem 'sidekiq'
+gem "sidekiq"
 
 
 group :development, :test do
@@ -61,6 +61,8 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  gem "rspec-rails", "~> 8.0.0"
 end
 
 group :development do
