@@ -94,3 +94,4 @@ bundle exec rails solid_queue:start
 - 外部キー制約とインデックスを適切に設定
 - 既存のコード規約とスタイルを維持
 - セキュリティベストプラクティスに従う
+- コメントやテストケースについての説明、GraphQLのdescriptionなどは全て日本語で記述すること
